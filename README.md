@@ -3,14 +3,10 @@
 Proyek ini adalah website portofolio dinamis untuk **PRADStudio** yang dibangun menggunakan **TALL Stack** dengan integrasi **Filament Admin** untuk pengelolaan konten.
 Seluruh data, termasuk setiap section halaman, dapat diatur secara dinamis melalui panel admin.
 
----
-
 ## 📜 Deskripsi
 
 Website ini dirancang untuk menampilkan profil perusahaan, layanan, portofolio, klien, tim, dan informasi lain yang relevan secara profesional.
 Dengan dukungan pengelolaan berbasis database, semua konten dapat diubah tanpa perlu menyentuh kode, memudahkan pengelolaan oleh tim non-teknis.
-
----
 
 ## ✨ Fitur Utama
 
@@ -56,8 +52,6 @@ Dengan dukungan pengelolaan berbasis database, semua konten dapat diubah tanpa p
 -   **Urutan & Status**
     Setiap data dapat diatur urutannya (`sort_order`) serta status tampil (`is_active`, `is_published`, `is_featured`).
 
----
-
 ## ⚙️ Instalasi Singkat
 
 1. Clone repository
@@ -94,8 +88,6 @@ Dengan dukungan pengelolaan berbasis database, semua konten dapat diubah tanpa p
     npm run dev
     ```
 
----
-
 ## 🔑 Akses Panel Admin
 
 1. Buat user admin Filament
@@ -105,8 +97,6 @@ Dengan dukungan pengelolaan berbasis database, semua konten dapat diubah tanpa p
     ```
 
 2. Login melalui `/admin` dengan akun yang sudah dibuat.
-
----
 
 ## 📄 Lisensi
 
