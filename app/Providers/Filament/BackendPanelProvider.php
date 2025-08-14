@@ -16,6 +16,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class BackendPanelProvider extends PanelProvider
@@ -67,6 +68,6 @@ class BackendPanelProvider extends PanelProvider
 
     protected function getFavicon(): ?string
     {
-        return settings()->favicon ?: null;
+        return settings()->favicon ? Storage::url(settings()->favicon) : null;
     }
 }
