@@ -35,13 +35,9 @@ class PageResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('title')
                             ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
+                            ->maxLength(255),
                         Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
+                            ->readOnly(),
                         Forms\Components\RichEditor::make('content')
                             ->columnSpanFull(),
                     ])->columns(2),
@@ -67,8 +63,8 @@ class PageResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('slug'),
+                    ->searchable()
+                    ->description(fn(Page $record): string => $record->slug),
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean(),
             ])

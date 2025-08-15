@@ -33,6 +33,8 @@ class ClientResource extends Resource
                         Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('slug')
+                            ->readOnly(),
                         Forms\Components\FileUpload::make('logo_url')
                             ->image()
                             ->directory('clients'),
@@ -67,6 +69,7 @@ class ClientResource extends Resource
                 Tables\Columns\ImageColumn::make('logo_url')
                     ->label('Logo'),
                 Tables\Columns\TextColumn::make('name')
+                    ->description(fn(ModelsClient $record): string => $record->slug)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('industry')
                     ->searchable(),

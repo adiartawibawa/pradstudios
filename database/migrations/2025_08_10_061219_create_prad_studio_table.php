@@ -80,6 +80,7 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('logo_url')->nullable();
             $table->string('website_url')->nullable();
             $table->string('industry')->nullable();
@@ -134,6 +135,7 @@ return new class extends Migration
         Schema::create('insights', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('icon')->nullable();
             $table->string('external_link')->nullable();

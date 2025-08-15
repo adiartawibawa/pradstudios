@@ -35,6 +35,8 @@ class InsightResource extends Resource
                         Forms\Components\TextInput::make('title')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('slug')
+                            ->readOnly(),
                         Forms\Components\Textarea::make('description')
                             ->columnSpanFull(),
                         Forms\Components\FileUpload::make('icon')
@@ -58,6 +60,7 @@ class InsightResource extends Resource
                 Tables\Columns\ImageColumn::make('icon')
                     ->label('Icon'),
                 Tables\Columns\TextColumn::make('title')
+                    ->description(fn(Insight $record): string => $record->slug)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('project.title')
                     ->searchable(),

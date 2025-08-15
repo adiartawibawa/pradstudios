@@ -8,5 +8,5 @@ class Contact extends Cluster
 {
     protected static ?string $navigationIcon = 'heroicon-o-envelope';
 
-    protected static ?string $navigationGroup = 'Contact Management';
+    protected static ?string $navigationGroup = 'Client Management';
 }

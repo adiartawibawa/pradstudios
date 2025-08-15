@@ -8,5 +8,5 @@ class Settings extends Cluster
 {
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
 
-    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationGroup = 'System';
 }

@@ -33,13 +33,8 @@ class ServiceResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
-                        Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('slug')->readOnly(),
                         Forms\Components\Textarea::make('short_description')
                             ->maxLength(500)
                             ->columnSpanFull(),

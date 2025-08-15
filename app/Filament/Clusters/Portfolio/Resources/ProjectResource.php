@@ -35,13 +35,9 @@ class ProjectResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('title')
                             ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
+                            ->maxLength(255),
                         Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
+                            ->readOnly(),
                         Forms\Components\TextInput::make('subtitle')
                             ->maxLength(255),
                         Forms\Components\Textarea::make('description')
@@ -99,6 +95,7 @@ class ProjectResource extends Resource
                 Tables\Columns\ImageColumn::make('image_url')
                     ->label('Thumbnail'),
                 Tables\Columns\TextColumn::make('title')
+                    ->description(fn(Project $record): string => $record->slug)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category')
                     ->searchable(),

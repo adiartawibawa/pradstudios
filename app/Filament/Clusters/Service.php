@@ -6,7 +6,7 @@ use Filament\Clusters\Cluster;
 
 class Service extends Cluster
 {
-    protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
+    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
-    protected static ?string $navigationGroup = 'Service Management';
+    protected static ?string $navigationGroup = 'Content Management';
 }

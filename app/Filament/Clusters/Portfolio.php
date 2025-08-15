@@ -8,5 +8,5 @@ class Portfolio extends Cluster
 {
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
 
-    protected static ?string $navigationGroup = 'Portfolio Management';
+    protected static ?string $navigationGroup = 'Content Management';
 }
